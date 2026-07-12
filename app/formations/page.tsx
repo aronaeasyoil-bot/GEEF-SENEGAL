@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { TrainingCatalog } from "../components/Listings";
+import { PageHero, SectionHeading, ValidationNotice } from "../components/Primitives";
+
+export const metadata: Metadata = { title: "Formations", description: "Catalogue de formations en ingénierie financière, business plan, modélisation et financement de projets." };
+export default function TrainingsPage() { return <><PageHero eyebrow="Formations" title="Des compétences financières qui s’appliquent dès le retour au bureau." intro="Programmes en présentiel, en ligne, en entreprise ou sur mesure, construits autour de cas pratiques et d’outils réutilisables." image="/images/hero-team.webp" alt="Équipe en réunion de travail autour d’ordinateurs portables." /><section className="content-section is-white"><div className="container split-heading"><SectionHeading eyebrow="Catalogue" title="Choisir une thématique" intro="Les objectifs, programmes, durées, intervenants et dates seront confirmés pour chaque session." /></div><div className="container"><ValidationNotice>Aucune prochaine session ni aucun formateur ne sont annoncés tant que le calendrier n’est pas officiellement validé.</ValidationNotice><TrainingCatalog /></div></section></>; }
