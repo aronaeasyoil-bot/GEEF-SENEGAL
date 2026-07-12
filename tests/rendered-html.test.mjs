@@ -59,7 +59,10 @@ test("keeps deployment targets explicit and secrets outside source control", asy
     read(".gitignore"),
     read(".env.example"),
   ]);
-  assert.deepEqual(JSON.parse(hosting), { d1: "DB", r2: "FILES" });
+  const hostingConfig = JSON.parse(hosting);
+  assert.equal(hostingConfig.d1, "DB");
+  assert.equal(hostingConfig.r2, "FILES");
+  assert.match(hostingConfig.project_id, /^appgprj_/);
   assert.equal(JSON.parse(vercel).buildCommand, "next build");
   assert.match(gitignore, /\.env\*/);
   assert.match(envExample, /GEEF_ADMIN_PASSWORD_HASH/);
