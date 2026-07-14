@@ -241,12 +241,25 @@ export function HomePage() {
 
       <ProjectCTA />
 
-      <section className="partners-placeholder">
+      <section className="partners-section">
         <div className="container">
           <span className="eyebrow">Partenaires & clients</span>
-          <h2>Un espace réservé aux collaborations autorisées.</h2>
-          <p>Les logos seront affichés uniquement après accord écrit et validation par GEEF-SENEGAL.</p>
-          <div className="logo-placeholders" aria-hidden="true"><i>LOGO</i><i>LOGO</i><i>LOGO</i><i>LOGO</i><i>LOGO</i></div>
+          <h2>Des relations solides au service de projets ambitieux</h2>
+          <p>GEEF-SENEGAL évolue aux côtés d’entreprises, d’institutions et de réseaux économiques engagés dans le développement de projets structurants au Sénégal, en Afrique et à l’international.</p>
+          <div className="partner-gallery">
+            {[
+              { name: "GAIC · GCC Africa", image: "/images/partner-gaic.jpeg", alt: "Emblème de la Gulf Africa Investment Chamber, GCC Africa." },
+              { name: "AGREX 2026", image: "/images/partner-agrex-2026.webp", alt: "Visuel institutionnel AGREX 2026 consacré aux partenaires." },
+              { name: "Le Brief", image: "/images/partner-le-brief.jpeg", alt: "Accueil des bureaux de l’entreprise Le Brief." },
+              { name: "EasyOil", image: "/images/partner-easyoil.jpg", alt: "Équipe EasyOil sur un site industriel énergétique." },
+              { name: "DAMAC", image: "/images/partner-damac.jpg", alt: "Logo de DAMAC." },
+            ].map((partner) => (
+              <article className={`partner-card partner-card-${partner.name.toLowerCase().replaceAll(" ", "-").replaceAll("·", "")}`} key={partner.name}>
+                <div className="partner-image"><img src={partner.image} alt={partner.alt} /></div>
+                <strong>{partner.name}</strong>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
