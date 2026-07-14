@@ -17,7 +17,7 @@ test("replaces the starter with the GEEF-SENEGAL institutional site", async () =
   assert.match(page, /HomePage/);
   assert.match(layout, /GEEF-SENEGAL/);
   assert.match(layout, /ProfessionalService/);
-  assert.match(styles, /--navy-950:\s*#071c2c/i);
+  assert.match(styles, /--navy-950:\s*#06152f/i);
   assert.match(home, /Madame Seybanou LY MBACKE/i);
   assert.match(home, /Présentez votre projet/i);
   assert.match(styles, /\.hero-watermark/);

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { caseStudies, expertises, publications, sectors } from "../../lib/site-data";
-import { ArrowLink, ProjectCTA, SectionHeading, ValidationNotice } from "./Primitives";
+import { ArrowLink, ProjectCTA, SectionHeading } from "./Primitives";
 
 function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
   const [display, setDisplay] = useState(value);
@@ -132,7 +132,6 @@ export function HomePage() {
           <div className="stat-card"><strong><CountUp value={6} /></strong><span>secteurs prioritaires</span></div>
           <div className="stat-card stat-words"><strong>Local <i>&</i> international</strong><span>une approche ouverte sur les marchés</span></div>
         </div>
-        <div className="container"><ValidationNotice>Ces chiffres sont provisoires et doivent être confirmés par GEEF-SENEGAL avant mise en production publique.</ValidationNotice></div>
       </section>
 
       <section className="section expertise-list-section">
@@ -188,7 +187,6 @@ export function HomePage() {
             </article>
           ))}
         </div>
-        <div className="container"><ValidationNotice>Les références ci-dessus sont des contenus de démonstration issus du brief. Le cabinet doit valider leur publication, leur formulation et tout résultat associé.</ValidationNotice></div>
       </section>
 
       <section className="section methodology-section">
@@ -217,14 +215,13 @@ export function HomePage() {
             <p className="lead">Une expérience transversale de la banque, de la finance internationale, de l’investissement et de l’accompagnement des organisations.</p>
             <div className="leadership-tags"><span>Banque</span><span>Investissement</span><span>Garanties financières</span><span>Microfinance</span><span>Entrepreneuriat</span><span>Audit</span><span>Institutions publiques</span></div>
             <Link className="button button-outline" href="/equipe">Découvrir son parcours</Link>
-            <small>Biographie détaillée et diplômes à compléter après validation officielle.</small>
           </div>
         </div>
       </section>
 
       <section className="section publications-section">
         <div className="container split-heading">
-          <SectionHeading eyebrow="Analyses et perspectives" title="Des repères pour comprendre, décider et agir" intro="Le futur centre de ressources réunira notes économiques, analyses sectorielles, guides et actualités du cabinet." />
+          <SectionHeading eyebrow="Analyses et perspectives" title="Des repères pour comprendre, décider et agir" intro="Notre centre de ressources réunit notes économiques, analyses sectorielles, guides pratiques et actualités du cabinet." />
           <Link className="button button-outline" href="/publications">Toutes les publications</Link>
         </div>
         <div className="container publication-grid">

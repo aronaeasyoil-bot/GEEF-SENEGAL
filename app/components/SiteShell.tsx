@@ -180,7 +180,7 @@ function NewsletterMini() {
   }
   return (
     <form className="footer-newsletter" onSubmit={submit}>
-      <label htmlFor="footer-email">Recevez nos futures analyses</label>
+      <label htmlFor="footer-email">Recevez nos analyses</label>
       <div>
         <input id="footer-email" name="email" type="email" placeholder="votre@email.com" required />
         <input type="text" name="website" tabIndex={-1} autoComplete="off" className="honeypot" aria-hidden="true" />

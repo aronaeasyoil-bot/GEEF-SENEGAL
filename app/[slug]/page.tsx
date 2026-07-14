@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHero, ValidationNotice } from "../components/Primitives";
+import { PageHero } from "../components/Primitives";
 
 const legalPages: Record<string, { title: string; intro: string; sections: { title: string; body: string }[] }> = {
   "mentions-legales": {
@@ -46,4 +46,4 @@ const legalPages: Record<string, { title: string; intro: string; sections: { tit
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const page = legalPages[slug]; return page ? { title: page.title, description: page.intro, robots: { index: true, follow: true } } : {}; }
 export function generateStaticParams() { return Object.keys(legalPages).map((slug) => ({ slug })); }
-export default async function LegalPage({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const page = legalPages[slug]; if (!page) notFound(); return <><PageHero eyebrow="Informations juridiques" title={page.title} intro={page.intro} /><section className="content-section is-white"><div className="container legal-layout"><aside><strong>Dernière mise à jour</strong><p>Version provisoire · juillet 2026</p><ValidationNotice>Cette page doit être relue et validée par le conseil juridique de GEEF-SENEGAL avant publication définitive.</ValidationNotice></aside><div>{page.sections.map((section) => <section key={section.title}><h2>{section.title}</h2><p>{section.body}</p></section>)}</div></div></section></>; }
+export default async function LegalPage({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const page = legalPages[slug]; if (!page) notFound(); return <><PageHero eyebrow="Informations juridiques" title={page.title} intro={page.intro} /><section className="content-section is-white"><div className="container legal-layout"><aside><strong>Dernière mise à jour</strong><p>Juillet 2026</p></aside><div>{page.sections.map((section) => <section key={section.title}><h2>{section.title}</h2><p>{section.body}</p></section>)}</div></div></section></>; }

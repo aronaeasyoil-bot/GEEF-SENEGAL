@@ -86,15 +86,6 @@ export function ProjectCTA({ compact = false }: { compact?: boolean }) {
   );
 }
 
-export function ValidationNotice({ children }: { children: ReactNode }) {
-  return (
-    <aside className="validation-notice">
-      <span aria-hidden="true">i</span>
-      <div><strong>Contenu en validation</strong><p>{children}</p></div>
-    </aside>
-  );
-}
-
 export function ArrowLink({ href, children }: { href: string; children: ReactNode }) {
   return <Link className="arrow-link" href={href}>{children}<span aria-hidden="true">↗</span></Link>;
 }

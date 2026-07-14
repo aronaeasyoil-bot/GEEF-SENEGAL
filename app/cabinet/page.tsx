@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHero, ProjectCTA, SectionHeading, ValidationNotice } from "../components/Primitives";
+import { PageHero, ProjectCTA, SectionHeading } from "../components/Primitives";
 
 export const metadata: Metadata = {
   title: "Le Cabinet",
@@ -20,7 +20,6 @@ export default function CabinetPage() {
           <div className="content-copy">
             <p className="lead">GEEF-SENEGAL SARL est un Cabinet d’Études et d’Ingénierie Financières. Il intervient auprès des entreprises, institutions publiques, investisseurs et partenaires au développement.</p>
             <p>Le cabinet transforme des problématiques complexes en analyses structurées, modèles transparents et feuilles de route opérationnelles. Les missions sont conduites avec rigueur, confidentialité et attention portée aux réalités économiques africaines.</p>
-            <ValidationNotice>L’historique détaillé du cabinet, sa date de création et les jalons institutionnels seront intégrés dès validation des informations officielles.</ValidationNotice>
           </div>
         </div>
       </section>

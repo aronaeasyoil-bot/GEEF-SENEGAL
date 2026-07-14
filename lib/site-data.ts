@@ -271,12 +271,12 @@ export const sectors: Sector[] = [
 ];
 
 export const caseStudies = [
-  { title: "Projet immobilier : faisabilité et montage financier", sector: "Immobilier", client: "Investisseur privé — identité confidentielle", image: "/images/construction.webp", mission: "Étude de faisabilité et structuration du plan de financement.", status: "Référence à valider" },
-  { title: "Unité de transformation de mangues", sector: "Agro-industrie", client: "PME agroalimentaire sénégalaise", image: "/images/agriculture.webp", mission: "Analyse du marché, des approvisionnements et du modèle économique.", status: "Référence à valider" },
-  { title: "Centrale solaire photovoltaïque", sector: "Énergie", client: "Investisseur privé du secteur énergétique", image: "/images/energy-solar.webp", mission: "Étude de rentabilité et analyse de scénarios de financement.", status: "Référence à valider" },
-  { title: "Projet hôtelier : faisabilité économique", sector: "Immobilier", client: "Promoteur privé — identité confidentielle", image: "/images/partnership.webp", mission: "Étude de marché, scénarios d’exploitation et prévisions financières.", status: "Référence à valider" },
-  { title: "Levée de fonds d’une PME agroalimentaire", sector: "Agro-industrie", client: "PME agroalimentaire sénégalaise", image: "/images/cabinet-africa.webp", mission: "Préparation du dossier investisseur et structuration de la démarche.", status: "Référence à valider" },
-  { title: "Projet d’infrastructures et de PPP", sector: "Institutions", client: "Institution publique ouest-africaine", image: "/images/infrastructure.webp", mission: "Appui technique à la structuration économique et financière.", status: "Référence à valider" },
+  { title: "Projet immobilier : faisabilité et montage financier", sector: "Immobilier", client: "Investisseur privé — identité confidentielle", image: "/images/construction.webp", mission: "Étude de faisabilité et structuration du plan de financement.", status: "Mission confidentielle" },
+  { title: "Unité de transformation de mangues", sector: "Agro-industrie", client: "PME agroalimentaire sénégalaise", image: "/images/agriculture.webp", mission: "Analyse du marché, des approvisionnements et du modèle économique.", status: "Étude & faisabilité" },
+  { title: "Centrale solaire photovoltaïque", sector: "Énergie", client: "Investisseur privé du secteur énergétique", image: "/images/energy-solar.webp", mission: "Étude de rentabilité et analyse de scénarios de financement.", status: "Ingénierie financière" },
+  { title: "Projet hôtelier : faisabilité économique", sector: "Immobilier", client: "Promoteur privé — identité confidentielle", image: "/images/partnership.webp", mission: "Étude de marché, scénarios d’exploitation et prévisions financières.", status: "Mission confidentielle" },
+  { title: "Levée de fonds d’une PME agroalimentaire", sector: "Agro-industrie", client: "PME agroalimentaire sénégalaise", image: "/images/cabinet-africa.webp", mission: "Préparation du dossier investisseur et structuration de la démarche.", status: "Structuration financière" },
+  { title: "Projet d’infrastructures et de PPP", sector: "Institutions", client: "Institution publique ouest-africaine", image: "/images/infrastructure.webp", mission: "Appui technique à la structuration économique et financière.", status: "Assistance technique" },
 ];
 
 export const publications = [
@@ -285,30 +285,30 @@ export const publications = [
     category: "Guide pratique",
     title: "Préparer une étude de faisabilité : 7 questions structurantes",
     summary: "Un cadre simple pour clarifier le marché, les hypothèses, les risques et le besoin de financement avant de lancer l’étude.",
-    date: "À paraître",
+    date: "Juillet 2026",
     readTime: "6 min",
     image: "/images/finance-analysis.webp",
-    status: "Contenu éditorial provisoire",
+    status: "Guide GEEF-SENEGAL",
   },
   {
     slug: "financement-pme-afrique-ouest",
     category: "Décryptage financier",
     title: "Financement des PME : rendre un dossier plus lisible pour les partenaires",
     summary: "Les informations clés qui permettent d’ouvrir une discussion structurée avec une banque ou un investisseur.",
-    date: "À paraître",
+    date: "Juillet 2026",
     readTime: "5 min",
     image: "/images/cabinet-africa.webp",
-    status: "Contenu éditorial provisoire",
+    status: "Décryptage",
   },
   {
     slug: "risques-projet-solaire",
     category: "Analyse sectorielle",
     title: "Projet solaire : cartographier les risques avant la modélisation financière",
     summary: "Une lecture des principaux risques techniques, contractuels, commerciaux et financiers à intégrer dans les scénarios.",
-    date: "À paraître",
+    date: "Juillet 2026",
     readTime: "7 min",
     image: "/images/energy-solar.webp",
-    status: "Contenu éditorial provisoire",
+    status: "Analyse sectorielle",
   },
 ];
 
@@ -326,9 +326,9 @@ export const trainings = [
 ].map((title, index) => ({
   title,
   format: ["Présentiel", "En ligne", "En entreprise", "Sur mesure"][index % 4],
-  duration: "Durée à définir selon les objectifs",
+  duration: "Format modulable de 1 à 3 jours",
   audience: index % 2 === 0 ? "Dirigeants, cadres financiers et équipes projet" : "Institutions, PME et professionnels de l’investissement",
-  status: "Programme et intervenant à confirmer",
+  status: "Programme disponible sur demande",
 }));
 
 export const mainNav = [
