@@ -16,12 +16,8 @@ import { CmsRuntime } from "./CmsRuntime";
 function Brand({ light = false }: { light?: boolean }) {
   return (
     <Link className={`brand ${light ? "brand-light" : ""}`} href="/" aria-label="GEEF-SENEGAL, accueil">
-      <span className="brand-mark" aria-hidden="true">
-        G<span>•</span>
-      </span>
-      <span className="brand-copy">
-        <strong>GEEF-SENEGAL</strong>
-        <small>Études & ingénierie financières</small>
+      <span className="brand-logo-frame">
+        <img src="/images/logo-geef-senegal.jpeg" alt="GEEF Sénégal — Études et ingénierie financières" />
       </span>
     </Link>
   );
