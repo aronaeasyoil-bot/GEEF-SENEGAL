@@ -3,6 +3,8 @@ export type Expertise = {
   title: string;
   shortTitle: string;
   eyebrow: string;
+  image: string;
+  alt: string;
   intro: string;
   description: string;
   services: string[];
@@ -37,6 +39,8 @@ export const expertises: Expertise[] = [
     title: "Études économiques et financières",
     shortTitle: "Études & faisabilité",
     eyebrow: "Éclairer la décision",
+    image: "/images/finance-analysis.webp",
+    alt: "Équipe de conseil analysant des données financières et économiques.",
     intro:
       "Des analyses structurées pour comprendre un marché, tester la viabilité d’un projet et sécuriser les décisions d’investissement.",
     description:
@@ -77,6 +81,8 @@ export const expertises: Expertise[] = [
     title: "Ingénierie financière",
     shortTitle: "Ingénierie financière",
     eyebrow: "Structurer le financement",
+    image: "/images/infrastructure.webp",
+    alt: "Infrastructure moderne illustrant le financement de projets structurants.",
     intro:
       "Des schémas de financement cohérents avec les besoins du projet, sa capacité de remboursement et les attentes des financeurs.",
     description:
@@ -119,6 +125,8 @@ export const expertises: Expertise[] = [
     title: "Conseil stratégique",
     shortTitle: "Conseil stratégique",
     eyebrow: "Arbitrer avec méthode",
+    image: "/images/partnership.webp",
+    alt: "Partenaires réunis pour définir une stratégie et prendre une décision.",
     intro:
       "Des diagnostics indépendants pour évaluer une option d’investissement, une entreprise ou une trajectoire de croissance.",
     description:
@@ -160,6 +168,8 @@ export const expertises: Expertise[] = [
     title: "Formation et assistance technique",
     shortTitle: "Formation & assistance",
     eyebrow: "Renforcer les capacités",
+    image: "/images/hero-team.webp",
+    alt: "Équipe professionnelle participant à une séance de travail et de formation.",
     intro:
       "Des formations pratiques et des dispositifs d’assistance conçus autour des situations réelles des équipes.",
     description:

@@ -110,12 +110,16 @@ export function HomePage() {
         <div className="container expertise-card-grid">
           {expertises.map((expertise, index) => (
             <Link className="expertise-card" href={`/expertises/${expertise.slug}`} key={expertise.slug}>
-              <div className="card-number">0{index + 1}</div>
-              <div className={`abstract-icon icon-${index + 1}`} aria-hidden="true"><i /><i /><i /></div>
-              <span className="eyebrow">{expertise.eyebrow}</span>
-              <h3>{expertise.shortTitle}</h3>
-              <p>{expertise.intro}</p>
-              <span className="card-arrow" aria-hidden="true">↗</span>
+              <div className="expertise-card-media">
+                <img src={expertise.image} alt={expertise.alt} />
+                <span className="card-number">0{index + 1}</span>
+              </div>
+              <div className="expertise-card-body">
+                <span className="eyebrow">{expertise.eyebrow}</span>
+                <h3>{expertise.shortTitle}</h3>
+                <p>{expertise.intro}</p>
+                <span className="expertise-card-cta">Explorer l’expertise <i aria-hidden="true">↗</i></span>
+              </div>
             </Link>
           ))}
         </div>
