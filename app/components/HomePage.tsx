@@ -207,18 +207,17 @@ export function HomePage() {
 
       <section className="section leadership-section">
         <div className="container leadership-layout">
-          <div className="portrait-placeholder" role="img" aria-label="Emplacement réservé à la photographie officielle de Madame Seynabou LY MBACKE">
-            <div className="portrait-initials">SLM</div>
-            <span>Photographie officielle à fournir</span>
+          <div className="portrait-placeholder">
+            <img src="/images/seybanou-ly-mbacke.jpeg" alt="Portrait officiel de Madame Seybanou Ly Mbacké, directrice générale de GEEF-SENEGAL SARL." />
           </div>
           <div className="leadership-copy">
             <span className="eyebrow">Direction générale</span>
-            <h2>Madame Seynabou<br />LY MBACKE</h2>
+            <h2>Madame Seybanou LY MBACKE</h2>
             <p className="title">Directrice générale de GEEF-SENEGAL SARL</p>
             <p className="lead">Une expérience transversale de la banque, de la finance internationale, de l’investissement et de l’accompagnement des organisations.</p>
             <div className="leadership-tags"><span>Banque</span><span>Investissement</span><span>Garanties financières</span><span>Microfinance</span><span>Entrepreneuriat</span><span>Audit</span><span>Institutions publiques</span></div>
             <Link className="button button-outline" href="/equipe">Découvrir son parcours</Link>
-            <small>Biographie détaillée, diplômes et portrait à compléter après validation officielle.</small>
+            <small>Biographie détaillée et diplômes à compléter après validation officielle.</small>
           </div>
         </div>
       </section>
