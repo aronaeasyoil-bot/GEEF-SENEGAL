@@ -11,6 +11,7 @@ import {
   searchableLinks,
   sectors,
 } from "../../lib/site-data";
+import { CmsRuntime } from "./CmsRuntime";
 
 function Brand({ light = false }: { light?: boolean }) {
   return (
@@ -207,6 +208,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const isHome = pathname === "/";
+  const isAdministration = pathname.startsWith("/administration");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -220,6 +222,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
   const darkHeader = isHome && !scrolled && !mobileOpen;
   const primaryNav = mainNav.slice(0, 6);
   const secondaryNav = mainNav.slice(6);
+
+  if (isAdministration) return <main id="contenu-principal" className="admin-shell-main">{children}</main>;
 
   return (
     <>
@@ -324,6 +328,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         )}
       </header>
 
+      <CmsRuntime />
       <main id="contenu-principal">{children}</main>
 
       <footer className="site-footer">

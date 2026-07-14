@@ -40,6 +40,15 @@ test("includes the requested public routes, confidential submission flow and leg
     "app/soumettre-un-projet/page.tsx",
     "app/administration/page.tsx",
     "app/api/projects/route.ts",
+    "app/api/admin/cms/route.ts",
+    "app/api/admin/cms/publish/route.ts",
+    "app/api/admin/cms/media/route.ts",
+    "app/api/cms/public/route.ts",
+    "app/api/cms/media/[id]/route.ts",
+    "app/components/AdminCms.tsx",
+    "app/components/CmsRuntime.tsx",
+    "lib/cms-store.ts",
+    "drizzle/0001_loving_angel.sql",
     "public/documents/guide-preparation-etude-faisabilite.pdf",
     "public/og.png",
   ];
@@ -50,6 +59,14 @@ test("includes the requested public routes, confidential submission flow and leg
   const storage = await read("lib/private-store.ts");
   assert.match(storage, /access:\s*"private"/);
   assert.match(storage, /pending_scan/);
+  const cmsStorage = await read("lib/cms-store.ts");
+  assert.match(cmsStorage, /cms_pages/);
+  assert.match(cmsStorage, /cms\/media/);
+  const cmsApi = await read("app/api/admin/cms/route.ts");
+  assert.match(cmsApi, /verifyAdminSession/);
+  const admin = await read("app/administration/page.tsx");
+  assert.match(admin, /AdminCms/);
+  assert.match(admin, /Brouillons invisibles au public/);
 });
 
 test("keeps deployment targets explicit and secrets outside source control", async () => {

@@ -101,3 +101,20 @@ export const contentTranslations = sqliteTable("content_translations", {
   seoDescription: text("seo_description").notNull().default(""),
   translationStatus: text("translation_status").notNull().default("draft"),
 }, (table) => [uniqueIndex("translation_content_locale_unique").on(table.contentId, table.locale)]);
+
+export const cmsPages = sqliteTable("cms_pages", {
+  path: text("path").primaryKey(),
+  draftJson: text("draft_json").notNull().default("{}"),
+  publishedJson: text("published_json").notNull().default("{}"),
+  updatedAt: text("updated_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  publishedAt: text("published_at"),
+});
+
+export const cmsMedia = sqliteTable("cms_media", {
+  id: text("id").primaryKey(),
+  objectKey: text("object_key").notNull(),
+  contentType: text("content_type").notNull(),
+  size: integer("size").notNull(),
+  alt: text("alt").notNull().default(""),
+  createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+}, (table) => [uniqueIndex("cms_media_object_key_unique").on(table.objectKey)]);
