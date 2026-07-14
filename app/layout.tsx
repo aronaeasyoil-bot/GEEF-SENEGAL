@@ -21,13 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "geef-senegal.example";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
   const base = new URL(`${protocol}://${host}`);
-  const socialImage = new URL("/og.png", base).toString();
+  const socialImage = new URL("/images/geef-social-preview-2026.jpeg", base).toString();
   return {
     metadataBase: base,
     title: { default: "GEEF-SENEGAL | Cabinet d’Études et d’Ingénierie Financières", template: "%s | GEEF-SENEGAL" },
     description: "Études économiques, ingénierie financière, structuration de financements et conseil stratégique à Dakar.",
     keywords: ["cabinet ingénierie financière Sénégal", "étude de faisabilité Dakar", "business plan Sénégal", "structuration financière Afrique", "financement de projets Sénégal"],
-    openGraph: { type: "website", locale: "fr_SN", siteName: "GEEF-SENEGAL SARL", title: "GEEF-SENEGAL — Transformer les projets ambitieux en investissements solides", description: "Études, ingénierie financière et conseil stratégique au service de projets durables.", images: [{ url: socialImage, width: 1728, height: 912, alt: "GEEF-SENEGAL — Transformer les projets ambitieux en investissements solides et durables" }] },
+    openGraph: { type: "website", locale: "fr_SN", siteName: "GEEF-SENEGAL SARL", title: "GEEF-SENEGAL — Transformer les projets ambitieux en investissements solides", description: "Études, ingénierie financière et conseil stratégique au service de projets durables.", images: [{ url: socialImage, width: 1536, height: 1024, alt: "Accueil institutionnel de GEEF-SENEGAL — Études et ingénierie financières" }] },
     twitter: { card: "summary_large_image", title: "GEEF-SENEGAL", description: "Études et ingénierie financières à Dakar.", images: [socialImage] },
     robots: { index: true, follow: true },
   };
