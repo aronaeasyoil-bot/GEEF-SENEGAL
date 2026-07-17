@@ -3,6 +3,7 @@ import Link from "next/link";
 import { adminAuthConfigured, verifyAdminSession } from "../../lib/admin-auth";
 import { getRecordCounts } from "../../lib/private-store";
 import { AdminCms } from "../components/AdminCms";
+import { AdminFinancialPartners } from "../components/AdminFinancialPartners";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Administration", robots: { index: false, follow: false } };
@@ -50,11 +51,12 @@ export default async function AdministrationPage({ searchParams }: { searchParam
         <div><span>Session administrateur</span><form action="/api/admin/session/logout" method="post"><button type="submit">Se déconnecter</button></form></div>
       </div>
       <div className="admin-layout">
-        <aside><nav><a className="active" href="#vue-ensemble">Vue d’ensemble</a><a href="#editeur">Éditeur du site</a><a href="#demandes">Demandes reçues</a><Link href="/">Voir le site public ↗</Link></nav><div><strong>Accès privé</strong><span>Administrateur</span><small>La connexion et chaque modification sont vérifiées côté serveur.</small></div></aside>
+        <aside><nav><a className="active" href="#vue-ensemble">Vue d’ensemble</a><a href="#partenaires-financiers">Partenaires financiers</a><a href="#editeur">Éditeur du site</a><a href="#demandes">Demandes reçues</a><Link href="/">Voir le site public ↗</Link></nav><div><strong>Accès privé</strong><span>Administrateur</span><small>La connexion et chaque modification sont vérifiées côté serveur.</small></div></aside>
         <main>
           <header id="vue-ensemble"><span className="eyebrow">Tableau de bord privé</span><h1>Pilotez votre site.</h1><p>Modifiez chaque section, ajoutez vos images, prévisualisez et publiez quand vous êtes prêt.</p></header>
           {!totals.connected && <div className="admin-warning">Le stockage privé n’est pas connecté dans cet environnement. Les compteurs locaux ne sont pas persistants.</div>}
           <section id="demandes" className="admin-stat-grid"><article><span>Contacts</span><strong>{totals.contacts}</strong><small>Demandes enregistrées</small></article><article><span>Projets</span><strong>{totals.projects}</strong><small>Soumissions confidentielles</small></article><article><span>Newsletter</span><strong>{totals.subscribers}</strong><small>Inscriptions</small></article><article><span>Mode éditorial</span><strong>Privé</strong><small>Brouillons invisibles au public</small></article></section>
+          <AdminFinancialPartners />
           <AdminCms />
           <section className="admin-security-note"><div><span aria-hidden="true">✓</span><div><strong>Administration non publique</strong><p>Aucun lien n’est affiché sur le site, la page est exclue des moteurs de recherche et les données d’édition ne sont accessibles qu’après authentification.</p></div></div></section>
         </main>

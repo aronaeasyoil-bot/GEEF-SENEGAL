@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { caseStudies, expertises, publications, sectors } from "../../lib/site-data";
+import { FinancialPartnersSection } from "./FinancialPartnersSection";
 import { ArrowLink, ProjectCTA, SectionHeading } from "./Primitives";
 
 function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
@@ -249,6 +250,8 @@ export function HomePage() {
           </figure>
         </div>
       </section>
+
+      <FinancialPartnersSection />
 
       <section className="section publications-section">
         <div className="container split-heading">

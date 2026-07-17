@@ -13,7 +13,8 @@ export async function POST(request: Request) {
     const body = await request.json() as { paths?: string[] };
     if (!body.paths?.length || body.paths.length > 4) return Response.json({ error: "Pages invalides" }, { status: 400 });
     const records = await publishCmsPaths(body.paths);
-    for (const path of body.paths) if (path !== "/__global__") revalidatePath(path);
+    for (const path of body.paths) if (!path.startsWith("/__")) revalidatePath(path);
+    if (body.paths.includes("/__financial-partners__")) revalidatePath("/");
     return Response.json({ published: true, records: records.map((record) => ({ path: record.path, publishedAt: record.publishedAt })) }, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) {
     return Response.json({ error: error instanceof Error ? error.message : "Publication impossible" }, { status: 400 });
