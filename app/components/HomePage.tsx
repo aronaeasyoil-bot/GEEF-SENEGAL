@@ -219,6 +219,37 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="section gaic-partnership-section">
+        <div className="container">
+          <div className="gaic-partnership-heading">
+            <span className="eyebrow">Partenariat stratégique international</span>
+            <h2>GEEF-SENEGAL, partenaire de la Gulf Africa Investment Chamber</h2>
+          </div>
+          <figure className="gaic-partnership-figure">
+            <div className="gaic-partnership-image">
+              <img src="/images/gaic-gulf-africa-partnership.jpeg" alt="Accueil institutionnel de la Gulf Africa Investment Chamber, plateforme d’investissement entre le Golfe et l’Afrique." />
+            </div>
+            <figcaption>
+              <div className="gaic-partnership-intro">
+                <strong>Un pont stratégique entre l’Afrique et les pays du Golfe</strong>
+                <span>GAIC · GCC Africa</span>
+              </div>
+              <div className="gaic-partnership-copy">
+                <p>La Gulf Africa Investment Chamber (GAIC) est une chambre d’investissement établie aux Émirats arabes unis. Elle rapproche les institutions, investisseurs, entreprises, décideurs et porteurs de projets afin de développer les échanges commerciaux, faciliter les investissements et structurer des partenariats à fort impact entre l’Afrique et les pays du Conseil de coopération du Golfe.</p>
+                <p>Son réseau international réunit des acteurs de haut niveau issus de la finance, de l’immobilier, de l’énergie, des infrastructures, du commerce et de l’innovation. Cette plateforme permet de transformer les opportunités africaines en projets mieux préparés, plus visibles et accessibles aux investisseurs du Golfe.</p>
+                <p>À travers ce partenariat, GEEF-SENEGAL renforce sa capacité à connecter les projets africains aux réseaux de financement et d’investissement du Golfe. Madame Seybanou Ly Mbacké, Directrice générale de GEEF-SENEGAL, est membre de la Chambre et y contribue dans une fonction stratégique liée à la finance, à la structuration des investissements et au rapprochement des écosystèmes économiques.</p>
+              </div>
+              <div className="gaic-partnership-pillars" aria-label="Axes du partenariat">
+                <span>Finance & investissement</span>
+                <span>Diplomatie économique</span>
+                <span>Afrique–Golfe</span>
+                <span>Partenariats structurants</span>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section className="section publications-section">
         <div className="container split-heading">
           <SectionHeading eyebrow="Analyses et perspectives" title="Des repères pour comprendre, décider et agir" intro="Notre centre de ressources réunit notes économiques, analyses sectorielles, guides pratiques et actualités du cabinet." />
