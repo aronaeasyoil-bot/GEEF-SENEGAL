@@ -38,6 +38,8 @@ test("includes the requested public routes, confidential submission flow and leg
     "app/carrieres/page.tsx",
     "app/contact/page.tsx",
     "app/soumettre-un-projet/page.tsx",
+    "app/brochure/page.tsx",
+    "app/en/[[...slug]]/page.tsx",
     "app/administration/page.tsx",
     "app/api/projects/route.ts",
     "app/api/admin/cms/route.ts",
@@ -50,6 +52,7 @@ test("includes the requested public routes, confidential submission flow and leg
     "lib/cms-store.ts",
     "drizzle/0001_loving_angel.sql",
     "public/documents/guide-preparation-etude-faisabilite.pdf",
+    "public/documents/brochure-institutionnelle-geef-senegal-2026.pdf",
     "public/og.png",
   ];
   await Promise.all(required.map((path) => access(new URL(path, root))));
@@ -67,6 +70,9 @@ test("includes the requested public routes, confidential submission flow and leg
   const admin = await read("app/administration/page.tsx");
   assert.match(admin, /AdminCms/);
   assert.match(admin, /Brouillons invisibles au public/);
+  const english = await read("app/en/[[...slug]]/page.tsx");
+  assert.match(english, /Economic Studies & Financial Engineering/);
+  assert.match(english, /Our corporate brochure/);
 });
 
 test("keeps deployment targets explicit and secrets outside source control", async () => {

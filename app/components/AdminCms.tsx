@@ -7,9 +7,9 @@ import type { CmsEditableField, CmsFieldValue } from "../../lib/cms-types";
 const basePages = [
   ["/", "Accueil"], ["/cabinet", "Le cabinet"], ["/expertises", "Expertises"], ["/secteurs", "Secteurs"],
   ["/realisations", "Réalisations"], ["/publications", "Publications"], ["/equipe", "Équipe"], ["/formations", "Formations"],
-  ["/carrieres", "Carrières"], ["/contact", "Contact"], ["/soumettre-un-projet", "Soumettre un projet"],
+  ["/carrieres", "Carrières"], ["/contact", "Contact"], ["/soumettre-un-projet", "Soumettre un projet"], ["/brochure", "Brochure institutionnelle"],
   ["/mentions-legales", "Mentions légales"], ["/confidentialite", "Confidentialité"], ["/cookies", "Cookies"],
-  ["/conditions-utilisation", "Conditions d’utilisation"], ["/en", "Accueil anglais"],
+  ["/conditions-utilisation", "Conditions d’utilisation"], ["/en", "Accueil anglais"], ["/en/brochure", "Brochure anglaise"],
 ] as const;
 
 const pages = [

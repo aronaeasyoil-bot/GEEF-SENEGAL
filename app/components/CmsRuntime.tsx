@@ -127,7 +127,12 @@ export function CmsRuntime() {
       try {
         const endpoint = preview ? "/api/admin/cms" : "/api/cms/public";
         const response = await fetch(`${endpoint}?path=${encodeURIComponent(pathname)}`, { cache: "no-store", credentials: "same-origin" });
-        if (response.ok) currentOverrides = (await response.json()).fields ?? {};
+        if (response.ok) {
+          currentOverrides = (await response.json()).fields ?? {};
+          if (pathname.startsWith("/en")) {
+            currentOverrides = Object.fromEntries(Object.entries(currentOverrides).filter(([key]) => !key.startsWith("global.")));
+          }
+        }
       } catch { /* The static site remains usable if the CMS storage is temporarily unavailable. */ }
       if (disposed) return;
       refresh();

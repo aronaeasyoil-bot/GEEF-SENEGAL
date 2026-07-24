@@ -88,6 +88,7 @@ export function HomePage() {
           <div className="hero-actions">
             <Link className="button button-primary hero-primary-action" href="/expertises">Découvrir nos expertises <span aria-hidden="true">↗</span></Link>
             <Link className="button button-project hero-project-action" href="/soumettre-un-projet">Présentez votre projet <span aria-hidden="true">↗</span></Link>
+            <Link className="hero-brochure-link" href="/brochure"><span aria-hidden="true">↓</span> Consulter notre brochure institutionnelle</Link>
           </div>
         </div>
         <div className="hero-caption">Photographie illustrative · réunion stratégique</div>
